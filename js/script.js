@@ -116,15 +116,15 @@ function createCardOverlay(price = null, className = null) {
 
         //y los botones (comprar y agregar al carrito)...
         btns.push(createBtn("buyBtn", "buyBtn", "Comprar", null));
-        btns.push(createBtn("cartBtn", "cartBtn", "Agregar al carrito", "../images/emptyCart.png"));
-        let fullcartBtn = createBtn("cartBtn", null, "Agregado al carrito", "../images/fullCart.png");
+        btns.push(createBtn("cartBtn", "cartBtn", "Agregar al carrito", "images/emptyCart.png"));
+        let fullcartBtn = createBtn("cartBtn", null, "Agregado al carrito", "images/fullCart.png");
         fullcartBtn.classList.add("display-none");
         btns.push(fullcartBtn);
        
     } else {
         
         //Agrega los botones (continuar jugando y volver a inicio)...
-        btns.push(createBtn("continueBtn", null, "Continuar", "../images/play.png"));
+        btns.push(createBtn("continueBtn", null, "Continuar", "images/play.png"));
         btns.push(createBtn("cartBtn", null, "Volver a iniciar", null));
 
     }
@@ -171,7 +171,7 @@ function setAddToCartBtns() {
 function setBuyBtns() {
     let downloadTemplate = `<div class="btns-container">
                                 <div class="price"><p>Ya puedes descargar tu juego!!</p></div>
-                                <button class="continueBtn" id="downloadBtn"><img src="../images/download.png" alt="download"><p>Descargar</p></button>
+                                <button class="continueBtn" id="downloadBtn"><img src="images/download.png" alt="download"><p>Descargar</p></button>
                             </div>`;
 
 let loadingTemplate = `<div class="btns-container">
@@ -200,7 +200,7 @@ buyBtns.forEach((btn, i) => {
 
             initIntervals();
             setTimeout(() => {
-                btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="../images/play.png" alt="play"><p>Jugar</p></button>`;
+                btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="images/play.png" alt="play"><p>Jugar</p></button>`;
             }, 5500);
         });
     });
