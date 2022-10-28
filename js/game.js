@@ -19,3 +19,14 @@ document.querySelector("#comment-input").addEventListener("click", () => {
         document.querySelector(".comment-btns").classList.remove("visible");
     });
 });
+
+/*------------------------  Change view -------------------------------*/
+function setOnloadView() {
+    if(window.innerWidth > 600) {
+        console.log("change");
+        document.querySelector("#buy-first-view").style.display = "none";
+        document.querySelector("#play-view").style.display = "flex";
+    }
+}
+
+setOnloadView();
