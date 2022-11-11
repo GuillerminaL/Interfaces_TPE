@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>The Games Store</title>
+</head>
+<body>         
+    <div class="loading-container"></div>
+    <div id="body" class="display-none">
+        <header>
+            <div>
+                <a href="index.html"> <img class="logo" src="images/logo.png" alt="Logo de The Games Store"></a>
+            </div>
+            <div>
+                <button id="menu-btn"><img class="hamb-img" src="images/hamb_x.png" alt="Menu"></button>
+            </div>
+        </header>
+    
+        <nav class="display-none" id="vertical-nav" >
+            <div class="search">
+                <input type="search" name="" id="">
+                <button disabled="disabled"><iconify-icon icon="akar-icons:search" style="color: #533a76;"></iconify-icon></button>
+            </div>
+            <div>
+                <h1>Perfil</h1>
+                <ul>
+                    <li>Mi perfil</li>
+                    <li>Mis favoritos</li>
+                    <li>Mis juegos</li>
+                    <li>Mi carrito</li>
+                    <li>Salir</li>
+                </ul>
+            </div>
+            <div>
+                <h1>Categorías</h1>
+                <ul>
+                    <li>Acción</li>
+                    <li>Aventura</li>
+                    <li>Estrategia</li>
+                    <li>Lucha</li>
+                    <li>Rol</li>
+                    <li>RPG</li>
+                    <li>Shooter</li>
+                    <li>Simuladores</li>
+                    <li>Terror</li>
+                </ul>
+            </div>
+            <div class="row center">
+                <div class="elipse"><iconify-icon icon="akar-icons:instagram-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                <div class="elipse"><iconify-icon icon="akar-icons:facebook-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                <div class="elipse"><iconify-icon icon="akar-icons:twitter-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+            </div>
+        </nav>
+    
+        <div class="container">
+            <section>  
+                <div>
+                    <div class="mc-content" id="mc-content">
+                        <div>
+                            <a href="./html/lanzamiento.html">
+                                <img id="img-1" src="images/carousels/lanzamientos/GodOfWar.jpg" alt="Imagen">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <img src="images/carousels/lanzamientos/Darksiders.jpg" alt="Imagen">
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="mc-nav">
+                        <li class="mc-nav-point active"></li>
+                        <li class="mc-nav-point"></li>
+                    </ul>
+                    <div class="upcoming-releases">
+                        <p>Proximos lanzamientos</p>
+                        <h1 id="main-title">God Of War</h1>
+                    </div>    
+                </div>
+            </section>
+            <section>
+                <div class="small carousel" id="continue-playing-carousel">
+                    <div class="title">
+                        <h2>Seguir jugando...</h2>
+                    </div>
+                    <div class="carousel-nav">
+                        <div class="back-btn">
+                            <p><</p>
+                        </div>
+                        <div class="forward-btn">
+                            <p>></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="card">
+                            <a href="html/cuatroEnLinea.html"><img src="images/carousels/seguirJugando/cuatroEnLinea.png" alt="Imagen"></a>
+                            <div>
+                                <h5>Cuatro casas en línea</h5>
+                                <p>Nivel 1</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/multiversus.png" alt="Imagen">
+                            <div>
+                                <h5>Multiversus</h5>
+                                <p>Nivel 1</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/marioTennis.png" alt="Imagen">
+                            <div>
+                                <h5>Mario - Tennis</h5>
+                                <p>Nivel 2</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/marioParty.png" alt="Imagen">
+                            <div>
+                                <h5>Mario Party 10</h5>
+                                <p>Nivel 4</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/dyingLight.png" alt="Imagen">
+                            <div>
+                                <h5>Dying Light 2 - Stay Human</h5>
+                                <p>Nivel 4</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/superMarioStrikers.png" alt="Imagen">
+                            <div>
+                                <h5>Super Mario - Strikers</h5>
+                                <p>Nivel 5</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/limbo.png" alt="Imagen">
+                            <div>
+                                <h5>Limbo</h5>
+                                <p>Nivel 4</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/seguirJugando/wonderlands.png" alt="Imagen">
+                            <div>
+                                <h5>Tiny Tina's Wonderlands</h5>
+                                <p>Nivel 10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="carousel">
+                    <div class="title">
+                        <h2>Recomendados</h2>
+                    </div>
+                    <div class="carousel-nav">
+                        <div class="back-btn">
+                            <p><</p>
+                        </div>
+                        <div class="forward-btn">
+                            <p>></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="card">
+                            <img src="images/carousels/juegos/cultOfTheLamb.png" alt="Imagen">
+                            <div>
+                                <h5>Cult of the Lamb</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/eldenRing.png" alt="Imagen">
+                            <div>
+                                <h5>Elden Ring</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/kirby.png" alt="Imagen">
+                            <div>
+                                <h5>Kirby & the Forgotten Land</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/stray.png" alt="Imagen">
+                            <div>
+                                <h5>Stray</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/tunic.png" alt="Imagen">
+                            <div>
+                                <h5>Tunic</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/cultOfTheLamb.png" alt="Imagen">
+                            <div>
+                                <h5>Cult of the Lamb</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/bully.png" alt="Imagen">
+                            <div>
+                                <h5>Bully</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/crash.png" alt="Imagen">
+                            <div>
+                                <h5>Crash Bandicoot</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <section>
+                <div class="carousel">
+                    <div class="title">
+                        <h2>Juegos Premium</h2>
+                    </div>
+                    <div class="carousel-nav">
+                        <div class="back-btn">
+                            <p><</p>
+                        </div>
+                        <div class="forward-btn">
+                            <p>></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="card">
+                            <img src="images/carousels/juegos/FIFA 23.png" alt="Imagen">
+                            <div>
+                                <h5>FIFA 23</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/gtaSanAndreas.png" alt="Imagen">
+                            <div>
+                                <h5>Grand Theft Auto</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/hit&run.png" alt="Imagen">
+                            <div>
+                                <h5>The Simpsons: Hit & Run</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/littleInferno.png" alt="Imagen">
+                            <div>
+                                <h5>Little Inferno</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/MGSV.png" alt="Imagen">
+                            <div>
+                                <h5>Metal Gear Solid V</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/mudRunner.png" alt="Imagen">
+                            <div>
+                                <h5>Mud Runner</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/nierAutomata.png" alt="Imagen">
+                            <div>
+                                <h5>Nier: Automata</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/notTonight.png" alt="Imagen">
+                            <div>
+                                <h5>Not Tonight</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="carousel">
+                    <div class="title">
+                        <h2>Los más jugados...</h2>
+                    </div>
+                    <div class="carousel-nav">
+                        <div class="back-btn">
+                            <p><</p>
+                        </div>
+                        <div class="forward-btn">
+                            <p>></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="card">
+                            <img src="images/carousels/juegos/papersPlease.png" alt="Imagen">
+                            <div>
+                                <h5>Papers Please</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/shadowOfTheCollosus.png" alt="Imagen">
+                            <div>
+                                <h5>Shadow of the colossus</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/virtuaTennis.png" alt="Imagen">
+                            <div>
+                                <h5>Virtua Tennis</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/zeldaBOTW.png" alt="Imagen">
+                            <div>
+                                <h5>The legend of Zelda</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/tunic.png" alt="Imagen">
+                            <div>
+                                <h5>Cult of the Lamb</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/cultOfTheLamb.png" alt="Imagen">
+                            <div>
+                                <h5>Cult of the Lamb</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/eldenRing.png" alt="Imagen">
+                            <div>
+                                <h5>Cult of the Lamb</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/carousels/juegos/kirby.png" alt="Imagen">
+                            <div>
+                                <h5>Cult of the Lamb</h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+        <footer>
+            <div>
+                <div>
+                    <img class="footer-logo" src="images/logo.png" alt="Logo de The Games Store">
+                </div>
+            </div>
+            <div class="nav">
+                <div>
+                    <h1>Tienda</h1>
+                    <ul>
+                        <li>Juegos clásicos</li>
+                        <li>Juegos premium</li>
+                        <li>Lanzamientos</li>
+                        <li>Ofertas</li>
+                    </ul>
+                </div>
+                <div>
+                    <h1>Cuenta</h1>
+                    <ul>
+                        <li>Mi perfil</li>
+                        <li>Mis favoritos</li>
+                        <li>Mis juegos</li>
+                    </ul>
+                </div>
+                <div>
+                    <h1>Ayuda</h1>
+                    <ul>
+                        <li>Preguntas frecuentes</li>
+                        <li>Términos y condiciones</li>
+                        <li>Soporte técnico</li>
+                        <li>Contacto</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="row center">
+                    <div class="elipse"><iconify-icon icon="akar-icons:instagram-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                    <div class="elipse"><iconify-icon icon="akar-icons:facebook-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                    <div class="elipse"><iconify-icon icon="akar-icons:twitter-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                </div>
+                <div>
+                    <h1>Newsletter</h1>
+                    <h2>¡Suscribite para conocer novedades y descuentos!</h2>
+                    <div class="suscribe">
+                        <input type="email" name="" id="" placeholder="Email...">
+                        <button disabled="disabled">Suscribirme</button>
+                    </div>
+                </div>
+            </div>
+            <div class="leyend">
+                <p>The Game Store © 2016 <a href="html/about.html">Creado por BGIT</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script> 
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
