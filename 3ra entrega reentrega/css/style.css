@@ -1505,6 +1505,10 @@ div.feature-card p {
         align-content: center;
     }
 
+    div#game-images-carousel div.carousel-nav {
+        height: 50%;
+    }
+
     div.carousel div.carousel-nav > div,  section.personajes div.carousel-nav > div {
         height: 100%;
         background-color: #120525;
@@ -1580,8 +1584,9 @@ div.feature-card p {
     div#game-images-carousel {
         width: 85vw;
     }
+
     div#game-images-carousel img {
-        width: 800px;
+        width: 550px;
     }
 
     div#game-images-carousel div.content div.card div {
@@ -1592,7 +1597,16 @@ div.feature-card p {
         padding: .2em;
         margin:.2em;
     }
-    
+
+    /*--------------- Animated cards carousel -------------*/
+    div.front-card > div {
+        text-align: center;
+    }
+
+    div.features-carousel {
+
+    }
+
     /*---------------------------------------------------*/
     
     /*-------- Cards Hover Functionality ---------*/
@@ -1655,7 +1669,7 @@ div.feature-card p {
     section div.carousel div.content, div#game-images-carousel div.content {
         display: flex;
         overflow-y: auto;
-        padding: 1em 3em 3em 3em;
+        padding: 0em 3em 0em 0em;
     }
 
     section div.carousel div.title {
