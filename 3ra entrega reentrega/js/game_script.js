@@ -170,7 +170,7 @@ function onMouseUp(e) {
         } else {
             board.savePlay(selectedPiece, selectedColumn);
             setTimeout(() => {
-                let winner = board.checkWinner();
+                let winner = board.checkWinner(selectedPiece, selectedColumn);
                 if(winner == null) {
                     setTurn(); 
                 } else {

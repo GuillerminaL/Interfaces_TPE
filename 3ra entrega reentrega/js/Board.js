@@ -166,6 +166,7 @@ class Board {
                             if ( row == column.length - 1 ) { // Llego al ultimo spot (fila)
                                 spot = column[row];
                                 this.settlePiece(interval, spot, piece, columnIndex);
+                                console.log('Settling piece ', row, columnIndex, spot.isFree());
                                 this.played_pieces++;
                                 return true;
                             }
@@ -176,6 +177,7 @@ class Board {
                             piece.setPosition(spot.getX()+this.spotSize/2, spot.getY()+this.spotSize/2);
                             this.settlePiece(interval, spot, piece, columnIndex);
                             this.played_pieces++;
+                            console.log('Settling piece ', row-1, columnIndex, spot.isFree());
                             return true;
                         }
                     }               
@@ -195,21 +197,77 @@ class Board {
         this.draw();
     }
 
+    getSpotPosition(piece, column) {
+        let currentSpot = null;
+        for ( const spot of this.spots[column]) {
+            if ( spot.isPointInside(piece.getX(), piece.getY())) {
+                currentSpot = spot;
+                break;
+            }
+        }
+        return currentSpot;
+    }
 
-    // checkDiagonalsRowsFromLeft() {
+    checkDiagonalUpRight(player, spot, column) {
+        const line = [];
+        let col_index = column + 1;
+        let row_index = this.spots[column].indexOf(spot) - 1;
+        while ( row_index >= 0 && col_index < this.mode.columns ) {
+            let next_spot = this.spots[col_index][row_index];
+            const currentPiece = next_spot.getPiece();
+            if ( currentPiece != null && currentPiece.getPlayer() === player ) {
+                line.push(currentPiece);
+                row_index--; 
+                col_index++;
+            }
+            else {
+                break;
+            }
+        }
+        return line;
+    }
 
-    //     return null;
-    // }
+    checkDiagonalDownLeft(player, spot, column) {
+        const line = [];
+        let col_index = column - 1;
+        let row_index = this.spots[column].indexOf(spot) + 1;
+        while ( row_index < this.mode.rows && col_index >= 0 ) {
+            let next_spot = this.spots[col_index][row_index];
+            const currentPiece = next_spot.getPiece();
+            if ( currentPiece != null && currentPiece.getPlayer() === player ) {
+                line.push(currentPiece);
+                row_index++; 
+                col_index--;
+            }
+            else {
+                break;
+            }
+        }
+        return line;
+    }
 
-    // checkDiagonals() {
-    //     let line = checkFromLeft();
-    //     if(line == null) {
-    //         checkFromRight();
-    //     }
-    //     return null;
-    // }
+    checkDiagonals(piece, column) {
+        let spot = this.getSpotPosition(piece, column);
+        let line = [];
+        let player = spot.getPiece().getPlayer();
+        line = this.checkDiagonalDownLeft(player, spot, column);
+        if(line.length == this.mode.line-1) {
+            line.push(piece);
+            this.winner = player;
+            return line;
+        } else {
+            let scnd_line = this.checkDiagonalUpRight(player, spot, column);
+            if(line.length + scnd_line.length == this.mode.line-1) {
+                for(const line_piece of scnd_line) line.push(line_piece);
+                line.push(piece);
+                this.winner = player;
+                return line;
+            }
+        }
+        return null;
+    }
 
-    checkRows(){ 
+    checkRows() { 
         for (let row = this.mode.rows -1; row >= 0; row--) {
             let line = [];
             let player;
@@ -268,13 +326,13 @@ class Board {
     }
 
     //A partir de l cuarta ficha, controlar...
-    checkWinner() {
+    checkWinner(piece, column) {
         //Si se jugaron las piezas necesarias para hacer línea, chequea. Si no, retorna null...
         if(this.played_pieces >= (this.mode.line*2) - 1) {
             let line = [];
             line = this.checkColumns();
             if(line == null) line = this.checkRows();
-            // if(line == null) line = this.checkDiagonals();
+            if(line == null) line = this.checkDiagonals(piece, column);
             if(line != null && this.winner != null) {
                 console.log("entra a mostrar ganador");
                 this.showWinnerPlay(line);

@@ -746,6 +746,7 @@ div.game-container, div#desktop-first-view {
     min-width: 15em;
     height: 75vh;
     width: 80vw;
+    min-height: 700px;
 }
 
 div.game-container {
@@ -1450,7 +1451,7 @@ div.feature-card p {
     /*----*/
 
     div.container div.game-container {
-        min-height: 18.5em;
+        min-height: 700px;
     }
 
     .buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {
