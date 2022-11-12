@@ -595,7 +595,7 @@ button img {
 
 /*------------------------------ Cuatro en línea ----------------------------------------------*/
 nav.breadcrumbs {
-    margin-top: 5.5em;
+    margin-top: 4em;
     position: sticky;
     align-self: flex-start;
     padding-left: 1em;
@@ -746,7 +746,7 @@ div.game-container, div#desktop-first-view {
     min-width: 15em;
     height: 75vh;
     width: 80vw;
-    min-height: 700px;
+    min-height: 400px;
 }
 
 div.game-container {
@@ -759,7 +759,7 @@ div.game-container {
     flex-direction: column;
     justify-content: center;
     align-items: space-around;
-    margin-top: 1.5em;
+    margin-top: .7em;
 }
 
 /*--------------------------------------------------------*/
@@ -769,10 +769,11 @@ div#desktop-first-view {
 }
 
 div#game-settings {
-    margin: 3em;
+    margin: 1.5em 3em;
     letter-spacing: .1em;
     color: #120525;
     display: flex;
+    justify-content: space-around;
 }
 
 div#game-settings form {
@@ -781,7 +782,8 @@ div#game-settings form {
 
 div#game-settings h2 {
     padding-bottom: .5em;
-    font-size: 2em;
+    font-size: 1.6em;
+    font-weight: bolder;
 }
 
 div#game-settings form section {
@@ -793,6 +795,10 @@ div#game-settings form section.board-settings {
     flex-wrap: wrap;
 }
 
+div#game-settings form section.board-settings h3 {
+    font-weight: 0.8;
+}
+
 div#game-settings form section.board-settings span {
     font-style: italic;
 }
@@ -800,6 +806,7 @@ div#game-settings form section.board-settings span {
 div#game-settings div.settings-confirm {
     display: flex;
     align-items: flex-end;
+    padding-bottom: 70px;
 }
 
 .piece-settings-btn-active {
@@ -808,9 +815,9 @@ div#game-settings div.settings-confirm {
 
 /*----   Game controls  ----*/
 button#restart-btn, button#close-btn  {
-    height: 4em;
-    width: 4em;
-    margin: 1em;
+    height: 2.5em;
+    width: 2.5em;
+    margin: 0.7em;
     border-radius: 50%;
 }
 
@@ -842,13 +849,13 @@ div#game-canvas {
 }
 
 .timer__part {
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 26px;
+    /* font-weight: bold; */
 }
 
 .timer__btn {
-    width: 50px;
-    height: 50px;
+    width: 2.5em;
+    height: 2.5em;
     margin-left: 16px;
     border-radius: 50%;
     border: none;
@@ -885,6 +892,7 @@ div#game-msg-div, div#game-modal {
     border-radius: 30px;
     font-size: 1.2em;
     letter-spacing: .1em;
+    background: rgba(80, 76, 76, 0.8);
 }
 
 
@@ -895,14 +903,14 @@ div#game-modal.active {
     position: absolute;
     z-index: 1;
     min-height: 3em;
-    color: red;
-    font-size: 1.6em;
+    color:#FFFFFF;
+    font-size: 1.2em;
     font-weight: bolder;
 }
 
 span.game-box {
     text-transform: capitalize;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .danger {
@@ -1373,12 +1381,12 @@ div.feature-card p {
     }
 
     nav.breadcrumbs {
-        padding: 1em;
+        padding: .5em;
         align-content: center;
     }
     
     nav.breadcrumbs li {
-        font-size: 1em;
+        font-size: .9em;
         letter-spacing: .2em;
         margin-left: 2em;
     }
@@ -1388,8 +1396,8 @@ div.feature-card p {
     }
     
     nav.breadcrumbs ul img {
-        width: 24px;
-        height: 24px;
+        width: 21px;
+        height: 21px;
     }
 
     .elipse:hover {
@@ -1451,7 +1459,7 @@ div.feature-card p {
     /*----*/
 
     div.container div.game-container {
-        min-height: 700px;
+        min-height: 400px;
     }
 
     .buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {

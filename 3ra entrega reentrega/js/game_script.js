@@ -48,7 +48,10 @@ function showErrorMsg(msg) {
     el.innerHTML = msg;
     section.appendChild(el);
 
-    setTimeout(() => {section.removeChild(el);}, 2000);
+    setTimeout(() => {
+        el.innerText = "";
+        section.removeChild(el);
+    }, 2000);
 }
 
 /**
@@ -261,7 +264,7 @@ function onMouseDown(e) {
                 board.draw();
             }
         } else {
-            let msg = `<p>Ni mil hechizos moverán esa ficha, <span class="game-box">` + current_player + `</span>!</p>`;
+            let msg = `<p>Mil hechizos no moverían esa ficha, <span class="game-box">` + current_player + `</span>!</p>`;
             showMsgInModalBox(msg, 2000);
         }
     }
