@@ -30,6 +30,21 @@ cNavPoints.forEach((point, i) => {
     });
 });
 
+//----------------- Animated cards carousel -----------------------
+/**
+ * Rota el elemento de la galería
+ */
+let animatedCards = document.querySelectorAll(".feature-card");
+animatedCards.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+        card.classList.add("flip");
+    });
+    card.addEventListener("mouseout", () => {
+        card.classList.remove("flip");
+    });
+});
+
+
 
 
 //--------------- Carousel Navigation -----------------------------

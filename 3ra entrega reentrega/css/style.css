@@ -1158,16 +1158,16 @@ div.features-cards-list {
 }
 
 div.feature-card {
-    background-color: #120525;
-    /* height: 563px; */
-    width: 360px;
     height: 400px;
-    border-radius: 15px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 1em;
-    margin: 2em;
+    /* background-color: #120525; */
+    /* height: 563px; */
+    /* width: 360px; */
+    /* border-radius: 15px; */
+    /* flex-direction: column; */
+    /* padding: 1em; */
+    /* margin: 2em; */
 }
 
 div.features-cards-list >  div.feature-card:nth-child(1) {
@@ -1582,7 +1582,7 @@ div.feature-card p {
 
     /*--------------- Game images carousel -------------*/
     div#game-images-carousel {
-        width: 85vw;
+        /* width: 85vw; */
     }
 
     div#game-images-carousel img {
@@ -1599,13 +1599,102 @@ div.feature-card p {
     }
 
     /*--------------- Animated cards carousel -------------*/
+
     div.front-card > div {
         text-align: center;
     }
 
-    div.features-carousel {
-
+    div.front-card {
+        background-color: #120525;
+        width: 260px;
+        height: 300px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+        margin: 2em;
+        font-size: .8em;
     }
+
+    div.feature-card {
+        /* display: inline-block; */
+        vertical-align: top;
+        width: 50%;
+        top: 0px;
+        left: 0px;
+        -webkit-perspective: 900px;
+                perspective: 900px;
+    }
+
+    div.feature-card div.front-card {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        -webkit-transform: rotateX(0) rotateY(0);
+                transform: rotateX(0) rotateY(0);
+
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+
+        -webkit-transition: all 1.5s ease-in-out;
+                transition: all 1.5s ease-in-out;
+    }
+
+    div.feature-card.flip .front-card {
+        -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+    }
+
+    div.feature-card div.front-card {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+
+        -webkit-transition: all 1.5s ease-in-out;
+                transition: all 1.5s ease-in-out;
+    }
+
+    div.feature-card div.back-card img {
+        padding: 5px;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* div.feature-card div.back-card img {
+        padding: 5px;
+        height: 100%;
+        width: 100%;
+    } */
+
+    div.feature-card div.back-card img {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+    }
+
+    div.feature-card div.front-card {
+        -webkit-transform: rotateX(0) rotateY(0);
+                transform: rotateX(0) rotateY(0);
+    }
+
+    div.feature-card .pad {
+        padding: 0px 5px;
+    }
+
+
+    
 
     /*---------------------------------------------------*/
     
