@@ -1100,7 +1100,7 @@ section.comunidad h3 {
 }
 
 .comentarios {
-    background:rgba(217, 217, 217, 1);
+    background:rgba(217, 217, 217, .7);
     color: #120525;
     max-height: none;
     margin-bottom: 50px;
@@ -1604,7 +1604,7 @@ div.feature-card p {
         text-align: center;
     }
 
-    div.front-card {
+    div.front-card, div.back-card {
         background-color: #120525;
         width: 260px;
         height: 300px;
@@ -1628,7 +1628,6 @@ div.feature-card p {
     }
 
     div.feature-card div.front-card {
-        position: absolute;
         top: 0px;
         left: 0px;
 
@@ -1650,7 +1649,12 @@ div.feature-card p {
                 transform: rotateY(180deg);
     }
 
-    div.feature-card div.front-card {
+    div.feature-card.flip div.back-card {
+        -webkit-transform: rotateX(0) rotateY(0);
+                transform: rotateX(0) rotateY(0);
+    }
+
+    div.feature-card div.back-card {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -1674,27 +1678,13 @@ div.feature-card p {
         width: 100%;
     }
 
-    /* div.feature-card div.back-card img {
-        padding: 5px;
-        height: 100%;
-        width: 100%;
-    } */
-
     div.feature-card div.back-card img {
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
-    }
-
-    div.feature-card div.front-card {
-        -webkit-transform: rotateX(0) rotateY(0);
-                transform: rotateX(0) rotateY(0);
     }
 
     div.feature-card .pad {
         padding: 0px 5px;
     }
-
-
-    
 
     /*---------------------------------------------------*/
     
