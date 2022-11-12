@@ -139,7 +139,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
+    min-height: 300px;
     width: 100vw;
     margin-bottom: 0px;
     /* bottom: 0; */
@@ -746,7 +746,7 @@ div.game-container, div#desktop-first-view {
     min-width: 15em;
     height: 75vh;
     width: 80vw;
-    min-height: 400px;
+    min-height: 300px;
 }
 
 div.game-container {
@@ -759,7 +759,6 @@ div.game-container {
     flex-direction: column;
     justify-content: center;
     align-items: space-around;
-    margin-top: .7em;
 }
 
 /*--------------------------------------------------------*/
@@ -1459,7 +1458,7 @@ div.feature-card p {
     /*----*/
 
     div.container div.game-container {
-        min-height: 400px;
+        min-height: 320px;
     }
 
     .buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {
@@ -1620,7 +1619,7 @@ div.feature-card p {
     }
 
     nav.breadcrumbs {
-        margin-top: 5.5em;
+        margin-top: 5em;
         padding: 1em;
     }
 
