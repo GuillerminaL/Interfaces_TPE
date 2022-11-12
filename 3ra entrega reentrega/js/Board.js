@@ -166,7 +166,6 @@ class Board {
                             if ( row == column.length - 1 ) { // Llego al ultimo spot (fila)
                                 spot = column[row];
                                 this.settlePiece(interval, spot, piece, columnIndex);
-                                console.log('Settling piece ', row, columnIndex, spot.isFree());
                                 this.played_pieces++;
                                 return true;
                             }
@@ -177,7 +176,6 @@ class Board {
                             piece.setPosition(spot.getX()+this.spotSize/2, spot.getY()+this.spotSize/2);
                             this.settlePiece(interval, spot, piece, columnIndex);
                             this.played_pieces++;
-                            console.log('Settling piece ', row-1, columnIndex, spot.isFree());
                             return true;
                         }
                     }               
@@ -246,25 +244,78 @@ class Board {
         return line;
     }
 
+    checkDiagonalUpLeft(player, spot, column) {
+        const line = [];
+        let col_index = column - 1;
+        let row_index = this.spots[column].indexOf(spot) - 1;
+        while ( row_index >= 0 && col_index >= 0 ) {
+            let next_spot = this.spots[col_index][row_index];
+            const currentPiece = next_spot.getPiece();
+            if ( currentPiece != null && currentPiece.getPlayer() === player ) {
+                line.push(currentPiece);
+                row_index--; 
+                col_index--;
+            }
+            else {
+                break;
+            }
+        }
+        return line;
+    }
+
+    checkDiagonalDownRight(player, spot, column){
+        const line = [];
+        let col_index = column + 1;
+        let row_index = this.spots[column].indexOf(spot) + 1;
+        while ( row_index < this.mode.rows && col_index < this.mode.columns) {
+            let next_spot = this.spots[col_index][row_index];
+            const currentPiece = next_spot.getPiece();
+            if ( currentPiece != null && currentPiece.getPlayer() === player ) {
+                line.push(currentPiece);
+                row_index++; 
+                col_index++;
+            }
+            else {
+                break;
+            }
+        }
+        return line;
+    }
+
+    checkSecondDiagonal(piece, player, spot, column) {
+        console.log("check second diagonal");
+        let line = this.checkDiagonalDownRight(player, spot, column);
+        if(line.length != this.mode.line-1) {
+            let scnd_line = this.checkDiagonalUpLeft(player, spot, column);
+            if(line.length + scnd_line.length != this.mode.line-1) {
+                return null;
+            } 
+            for(const line_piece of scnd_line) line.push(line_piece);
+        }
+        line.push(piece);
+        this.winner = player;
+        return line;
+    }
+
+    checkFirstDiagonal(piece, player, spot, column) {
+        let line = this.checkDiagonalDownLeft(player, spot, column);
+        if(line.length != this.mode.line-1) {
+            let scnd_line = this.checkDiagonalUpRight(player, spot, column);
+            if(line.length + scnd_line.length != this.mode.line-1) {
+                return null;
+            } 
+            for(const line_piece of scnd_line) line.push(line_piece);
+        }
+        line.push(piece);
+        this.winner = player;
+        return line;
+    }
+
     checkDiagonals(piece, column) {
         let spot = this.getSpotPosition(piece, column);
         let line = [];
         let player = spot.getPiece().getPlayer();
-        line = this.checkDiagonalDownLeft(player, spot, column);
-        if(line.length == this.mode.line-1) {
-            line.push(piece);
-            this.winner = player;
-            return line;
-        } else {
-            let scnd_line = this.checkDiagonalUpRight(player, spot, column);
-            if(line.length + scnd_line.length == this.mode.line-1) {
-                for(const line_piece of scnd_line) line.push(line_piece);
-                line.push(piece);
-                this.winner = player;
-                return line;
-            }
-        }
-        return null;
+        return (this.checkFirstDiagonal(piece, player, spot, column) || this.checkSecondDiagonal(piece, player, spot, column));
     }
 
     checkRows() { 
