@@ -767,6 +767,10 @@ div#desktop-first-view {
     background-image: url("../images/juego/background1.jpg");
 }
 
+.game-ongoing-background {
+    background-image: url("../images/juego/background.jpg");
+}
+
 div#game-settings {
     margin: 1.5em 3em;
     letter-spacing: .1em;

@@ -1,8 +1,8 @@
 class Board {
 
     margin = 5;
-    ygap = 0;
-    xgap = 0;
+    ygap = 2;
+    xgap = 2;
     spotSize;
 
     constructor(mode, player1, player2) {
