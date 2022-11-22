@@ -1,0 +1,1813 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    background-color:#261340;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Nunito';
+    color: #FFFFFF;
+}
+
+header, footer, nav#vertical-nav {
+    background-color: #120525;
+}
+
+/*------------------------------ Header ------------------------------------*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.5em;
+    width: 100%;
+    margin-top: 0px;
+    position: fixed;
+}
+
+header button {
+    background-color: #120525;
+    height: 4em;
+    width: 4em;
+    margin-right: 10px;
+}
+
+.hamb-img {
+    height: 1.2rem;
+}
+
+
+.logo {
+    margin-left: 20px;
+    height: 2rem;
+}
+
+.elipse {
+    height: 4em;
+    width: 4em;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elipse:active {
+    background-color: #261340;
+    /* transition: color 2s; */
+}
+
+nav#vertical-nav {
+    height: 100vh;
+    width: 90vw;
+    max-width: 28em;
+    margin-top: 4.5em;
+    padding: 0px 20px;
+    position: fixed;
+    right: 0;
+}
+
+nav#vertical-nav div {
+    padding: 0.7em;
+}
+
+nav#vertical-nav div.search {
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    height: 1.5em;
+}
+
+nav#vertical-nav input, nav#vertical-nav button {
+    background: #D9D9D9;
+    height: inherit;
+    margin: -1px;
+}
+
+nav#vertical-nav input {
+    border-radius: 15px 0px 0px 15px;
+    width: 100%;
+}
+
+nav#vertical-nav button {
+    border-radius: 0px 15px 15px 0px;
+    width: 3em;
+}
+
+nav#vertical-nav button:active {
+    background-color: #FFFFFF;
+}
+
+nav#vertical-nav ul {
+    padding: 0.5em 0em;
+    border-bottom: 1px solid #f21d6b;
+}
+
+nav#vertical-nav div h1, footer div h1 {
+    color: #f21d6b;
+    font-size: 1em;
+}
+
+nav#vertical-nav div li, footer {
+    font-size: 0.8em;
+}
+
+nav#vertical-nav div h1, footer div h1, nav#vertical-nav div li, footer {
+    line-height: 25px;
+    letter-spacing: 0.19em;
+}
+
+.center {
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+/*------------------------------ Footer ------------------------------------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    width: 100vw;
+    margin-bottom: 0px;
+    /* bottom: 0; */
+    position: absolute;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+footer div.aside {
+    padding: 0;
+}
+
+footer div, footer ul {
+    text-align: center;
+}
+
+footer div.suscribe {
+    flex-direction: row;
+    align-items: center;
+    height: 1.8em;
+    padding: 1em 0em;
+}
+
+footer input {
+    background: #D9D9D9;
+    height: inherit;
+    width: 100%;
+}
+
+footer input::placeholder {
+    padding: 0.3em;
+}
+
+footer button {
+    background-color: #1c0b35;
+    height: inherit;
+    width: 9em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 0.75em;
+    font-weight: 500;
+    line-height: 1em;
+    letter-spacing: 0.07em;
+}
+
+/*--------------------------*/
+
+footer h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+.footer-logo {
+    width: 162.15px;
+    height: 42px;
+}
+
+footer h2 {
+    font-size: 0.85em;
+    line-height: 1.4em;
+    font-weight: 600;
+}
+
+footer p:last-child {
+    font-size: 0.7em;
+}
+
+footer div.leyend {
+    align-self: center;
+}
+
+/*---------------- Progress bar -----------------------------*/
+
+.circle {
+    position: relative;
+    width: 25rem;
+    height: 21.25rem;
+    /* margin: auto; */
+}
+
+.std-circle {
+    width: 2rem;
+    height: 2rem;
+}
+
+.element {
+    position: absolute;
+    border-radius:50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.inactive {
+    background-color: grey;
+    transition: all .5s;
+}
+
+.loading-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #F21D6B;
+    background-color: #120525;
+}
+
+.progress-bar {
+    position: relative;
+    width: 12.5rem;
+    height: 1.25rem;
+    margin: 1em;
+    background-color: grey;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:#f21d6b;
+    transform: translateX(-100%);
+    animation:  fill-bar linear forwards;
+    animation-duration: 5s;
+}
+
+@keyframes fill-bar {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+/*--------------------------- Body -------------------------*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 65vh;
+}
+
+body section {
+    width: 100vw;
+    overflow: hidden;
+}
+
+body section > div {
+    width: 100%;
+    position: relative;
+    max-height: 41.5em;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* --------------------   Main Carousel   -------------------- */
+header, nav {
+    z-index: 1000000000;
+}
+
+body section:first-of-type {
+    margin-top: 4.5em;
+}
+
+body section > div .mc-content {
+    width: 200%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+
+    overflow: hidden;
+    max-height: 40em;
+
+}
+
+body section > div .mc-content div img {
+    display: block;
+    object-fit: cover;
+    width:100%;
+    height: 100%;
+    min-height: 300px;  
+}
+
+.mc-content div {
+    width: calc(100% / 2);
+}
+
+.mc-nav {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -70px;
+    z-index: 100000;
+}
+
+.mc-nav-point {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color:#120525;
+    border-radius: 100%;
+    margin: 0.5em;
+}
+
+.active {
+    background-color: #f21d6b;
+}
+
+.upcoming-releases {
+    position: absolute;
+    background: #533A76;
+    mix-blend-mode: luminosity;
+    opacity: 0.74;
+    filter: blur(5px);
+    border-radius: 3px;
+    top: 35%;
+    font-size: 1em;
+    min-width: 18em;
+    min-height: 9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    color: #FFFFFF;
+    text-align: center;
+    box-shadow: 4px -2px 4px #533A76;
+    z-index: 0;
+    filter: drop-shadow(0px 4px 155px #000000);
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+
+/*---------- Carousel- nav  ---------*/
+.carousel-nav {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}  
+
+/*----------------- Standard Carousel ------------------------------*/
+section div.carousel div.title {
+    width: 100%;
+    font-size: .7em;
+    color: #FCACC1;
+    padding-left: 4.3em;
+}
+
+body section:nth-child(3) div.carousel div.title {
+    color:#f21d6b;
+}
+
+body section:nth-child(4) div.carousel div.title {
+    color:#f21d6b;
+}
+
+section div.carousel div.card {
+    padding-top: .3em;
+    margin-right: 1em;
+}
+
+section div.carousel div.card:active {
+    background:#261340;
+    border-radius: 3px;
+    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+}
+
+.actions-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F21D6B;
+    border-radius: 0px 0px 3px 3px;
+    z-index: 1;
+}
+
+section div.carousel img:not(.buy-card-overlay img, .keep-playing-card img) {
+    box-sizing: border-box;
+    width: 100%;
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
+    position: relative;
+}
+
+section div.carousel div.content {
+    display: flex;
+    overflow-y: auto;
+    padding: .5em 3em 1em 3em;
+}
+
+section div.carousel div.card div {
+    text-align: center;
+    min-height: 5em;
+}
+
+section div.carousel div.card h5 {
+    font-size: .8em;
+    letter-spacing: .07em;
+    font-weight: normal;
+}
+
+section div.carousel div.card p {
+    font-size: .7em;
+}
+
+section div.small.carousel img:not(.buy-card-overlay img, .keep-playing-card img) {
+    height: 10em;
+}
+
+
+/*----------------------------- Buttons -------------------------------------------------*/
+.btns-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.btns-container div.price p {
+    text-align: center;
+}
+
+button img {
+    height: 1rem;
+    padding-right: .7rem;
+}
+
+.buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {
+    height: 2.4rem;
+    min-width: 10em;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .08rem;
+}
+
+.buyBtn, .continueBtn, .playSettingsBtn {
+    background-color: #17E8CF;
+    color:#120525;
+    font-weight: 600;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.buyBtn {
+    background-color: #120525;
+    color: #17E8CF;
+}
+
+.continueBtn:hover, .buyBtn:hover, .cartBtn:hover, .playSettingsBtn:hover, button#restart-btn:hover, button#close-btn:hover, 
+button#help-btn:hover,  button#done-btn:hover,  button#input-close-btn:hover {
+    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+    cursor: pointer;
+}
+
+.continueBtn:active, .playSettingsBtn:active {
+    background-color:#120525;
+    color: #17E8CF;
+}
+
+.small-loading {
+    width: 1.5em;
+    height: .5em;
+}  
+
+.loading-img-div {
+    font-size: .9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.cartBtn {
+    background-color:#261340;
+    color: #17E8CF;
+    font-weight: 500;
+    font-size: .8em;
+    margin-top: .2em;
+    display: flex;
+}
+
+.cartBtn.display-none {
+    display: none;
+}
+
+.cartBtn:active {
+    background-color: #17E8CF;
+    color: #120525;
+}
+
+.cartBtn:hover {
+    background-color: #120525;
+}
+
+.buyBtn:hover {
+    background-color: #17E8CF;
+    color:#533A76;
+    transition: all 0.5s ease;
+}
+
+.buyBtn:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background-color: #120525;;
+    background: rgba(5, 2, 4, 0.1);
+    transition: all 1s ease;
+}
+
+.buyBtn:hover:before {
+    width: 100%;
+}
+
+
+/*------------------------------ About. html---------------------------------------------------*/
+
+.about {
+    align-items: center;
+    justify-content: center;
+}
+
+.about div{
+    padding: 1em;
+}
+
+/*------------------------------ Cuatro en línea ----------------------------------------------*/
+nav.breadcrumbs {
+    margin-top: 4em;
+    position: sticky;
+    align-self: flex-start;
+    padding-left: 1em;
+    z-index: 0;                     /* correción índice*/
+}
+
+nav.breadcrumbs ul {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    color: #F21D6B;
+}
+
+nav.breadcrumbs li {
+    font-size: 12px;
+    margin-left: .8em;
+}
+
+nav.breadcrumbs li:last-of-type {
+    color: #D6FFFA;
+}
+
+nav.breadcrumbs ul img {
+    width: 17px;
+    height: 17px;
+}
+
+/*------------------------------------*/
+.game-container-background {
+    width: 100%;
+    min-height: 70%;
+    background-color: rgba(38, 19, 64, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+
+/*----------- Share Pop up -------*/
+div#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background-color: #261340;
+    display: none;
+    z-index: 99;
+}
+
+div#share-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+    width: 34em;
+    height: 19em;
+    background-color: #D9D9D9;
+}
+
+div#share-pop-up.visible,
+div#share-pop-up.visible ~ div#overlay, .buy-card-overlay.visible, .keep-playing-card.visible {
+  display: flex;
+}
+
+div#share-pop-up > div {
+    width: 80%;
+}
+
+button#close-pop-up {
+    background-color: unset;
+}
+
+button#close-pop-up:hover {
+    transform: scale(120%);
+    transition: all .3s ease-in-out;
+}
+
+div#share-pop-up > div:nth-child(1) {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 1.1em;
+    letter-spacing: 0.19em;
+    color: #120525;
+}
+
+div#share-pop-up > div:nth-child(2) {
+    justify-content: space-around;
+}
+
+div.link-copy {
+    text-align: center;
+    justify-content: center;
+}
+
+.link-copy input {
+    height: 29.579999923706055px;
+    width: 263px;
+    border-radius: 3px;
+    padding-left: 1em;
+    color: #120525;
+    margin-right: -2px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 10%;
+}
+
+.link-copy button {
+    margin-left: -2px;
+    width: 111.11px;
+    height: 30px;
+    background-color: #120525;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border-radius: 3px;  
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
+}
+
+.link-copy button:hover {
+    background-color: #261340;
+    transition: all .5s ease;
+}
+
+.link-copy button:active {
+    background-color: #261340;
+    transition: all .5s ease;
+}
+
+/*-----------------    Tercera entrega --------------------------------*/
+
+div.game-container, div#desktop-first-view {
+    min-width: 15em;
+    height: 75vh;
+    width: 80vw;
+    min-height: 300px;
+}
+
+div.game-container {
+    position: relative;
+    background: rgba(217, 217, 217, 0.5);
+    border: 3px solid #120525;
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+}
+
+/*--------------------------------------------------------*/
+
+div#desktop-first-view {
+    background-image: url("../images/juego/background1.jpg");
+}
+
+.game-ongoing-background {
+    background-image: url("../images/juego/background.jpg");
+}
+
+div#game-settings {
+    margin: 1.5em 3em;
+    letter-spacing: .1em;
+    color: #120525;
+    display: flex;
+    justify-content: space-around;
+}
+
+div#game-settings form {
+    width: 40%;
+}
+
+div#game-settings h2 {
+    padding-bottom: .5em;
+    font-size: 1.6em;
+    font-weight: bolder;
+}
+
+div#game-settings form section {
+    margin: 1em;
+    width: 25em;
+}
+
+div#game-settings form section.board-settings {
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
+div#game-settings form section.board-settings h3 {
+    font-weight: 0.8;
+}
+
+div#game-settings form section.board-settings span {
+    font-style: italic;
+}
+
+div#game-settings div.settings-confirm {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 70px;
+}
+
+.piece-settings-btn-active {
+    border: 5px solid yellow;
+}
+
+/*----   Game controls  ----*/
+button#help-btn, button#restart-btn, button#close-btn, button#done-btn, button#input-close-btn {
+    height: 2.5em;
+    width: 2.5em;
+    margin: 0.7em;
+}
+
+button#help-btn, button#restart-btn, button#close-btn, button#done-btn, button#input-close-btn {
+    border-radius: 50%;
+}
+
+button#done-btn, button#input-close-btn {
+    height: 1.7em;
+    width: 1.7em;
+    margin: 0.5em;
+}
+
+div#game-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#game-controls-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*---- Game canvas  -----*/
+div#game-canvas {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;   
+}
+
+/*-------- Timer -----------*/
+
+span.material-icons {
+    width: 24px;
+    height: 24px;
+}
+
+.time-input-box {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.timer {
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+    padding: 10px 13px;
+}
+
+.timer__part {
+    font-size: 26px;
+}
+
+.timer__btn {
+    width: 2.5em;
+    height: 2.5em;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: #8208e6;
+    cursor: pointer;
+}
+
+.timer__btn--start {
+    background: #00b84c;
+}
+
+.timer__btn--stop {
+    background: #ff0256;
+}
+
+/*--- game msg box ----*/
+
+div#game-msg-div {
+    display: flex;
+    max-height: 2em;
+}
+
+div#game-modal {
+    display: none;
+    font-size: 1.2em;
+}
+
+div#game-msg-div, div#game-modal {
+    margin: 1em;
+    width: 60%;
+    min-width: 20em;
+    min-height: 2em;
+    flex-wrap: wrap;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    border-radius: 30px;
+    letter-spacing: .1em;
+    background: rgba(80, 76, 76, 0.8);
+}
+
+div#game-modal.active {
+    display: flex;
+    background: rgba(80, 76, 76, 0.8);
+    padding: 1em;
+    position: absolute;
+    z-index: 1;
+    min-height: 3em;
+    color:#FFFFFF;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+span.game-box {
+    text-transform: capitalize;
+    /* font-style: italic; */
+}
+
+.danger {
+    color: red;
+    font-weight: 600;
+}
+
+div.board {
+    position: relative;
+}
+
+  
+
+/*-------------------------------------------------------------------------*/
+
+div.game-bkg-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+    box-sizing: border-box;
+    position: relative;
+}
+
+div.game-bkg-images div {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.game-bkg-images img{
+    object-fit: cover;
+    display: block; 
+    width: 100%;
+    height: 100%;
+}
+
+div.game-bkg-images img:not(#center-bkg-img) {
+    width: 6em;
+    margin: 1em;
+}
+
+div.game-bkg-images img#center-bkg-img {
+    display: none;
+}
+
+/*--------*/
+
+div.middle-wrapper {
+    width: 80%;
+}
+
+div.game-description, div.help {
+    margin: 0 5em;
+}
+
+div.game-description a {
+    text-decoration: underline;
+}
+
+div.game-description a:hover {
+    cursor: pointer;
+}
+
+div.game-header h1 {
+    font-size: 1.5em;
+}
+
+div.game-header {
+    text-align: center;
+    margin: 2em;
+}
+
+div.game-icons div {
+    width: 9em;
+}
+
+div.features-carousel {
+    margin: 5em 0em;
+}
+
+div.help > div {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 4em;
+}
+
+div.help h3 {
+    font-size: 1.5em;
+    color: #f21d6b;
+    margin: 2em 0em;
+}
+
+div.help h4 {
+    color:#FCACC1;
+    margin: 1em 0em;
+}
+
+div.help ul li {
+    list-style-type: disc;
+    margin-left: 2em;
+}
+
+
+/*-----*/
+
+.display-none {
+    display: none;
+}
+
+.comunidad{
+    width: 60vw;
+    margin: 0 auto;
+}
+
+section.comunidad h3 {
+    color: #f21d6b;
+    font-size: 1.5em;
+    margin: 2em 0em;
+}
+
+.cajaComentario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(217, 217, 217, 1);
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 0em 2em;
+}
+
+.cajaComentario > div {
+    padding: 1.5em;
+    width: 80%;
+}
+
+.cajaComentario input {
+    background-color: unset;
+    width: 100%;
+    border-bottom: solid grey 1px;
+    padding: 1em 0em;
+}
+
+.cajaComentario input:active {
+    border-bottom:#120525 solid 2px;
+}
+
+.cajaComentario > div:nth-child(1) {
+    background-color: #17E8CF;
+    width: 15%;
+}
+.comment-btns {
+    visibility: hidden;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.comment-btns.visible {
+    visibility: visible;
+}
+
+.comment-btns input {
+    padding: 0;
+    margin: 0em .5em;
+}
+
+.comment-btns input:nth-child(2) {
+    background-color: #120525;
+}
+
+.comment-btns input:hover {
+    background-color: #120525;
+}
+
+.comment-btns input:nth-child(2):hover {
+    background-color:#533A76;
+}
+
+.comunidad input:not(#comment-input) {
+    text-transform: capitalize;
+}
+
+.comentarios {
+    background:rgba(217, 217, 217, .7);
+    color: #120525;
+    max-height: none;
+    margin-bottom: 50px;
+}
+
+.comentario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2em;
+}
+
+.comentario > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    margin-right: 2em;
+}
+
+.comment{
+    width:90%;
+}
+
+.like-dislike{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5em;
+}
+
+.like-dislike > div{
+    display: flex;
+    margin-right: 10px;
+}
+
+.comentario > input, .cajaComentario .comentar{
+    height: 24px;
+    width: 90px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(83, 58, 118, 1);
+    color:white;
+}
+
+.cajaComentario > iconify-icon{
+    margin: 0 10px;
+}
+
+/*------------ Features carousel ---------------*/
+div.features-cards-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.feature-card {
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+div.features-cards-list >  div.feature-card:nth-child(1) {
+    margin-left: 0;
+}
+
+div.features-cards-list >  div.feature-card:nth-child(4) {
+    margin-right: 0;
+}
+
+div.feature-card img {
+    margin-top: 4em;
+    margin-bottom: 2em;
+    position: relative;
+    height: 44px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+div.feature-card p {
+    height: 60%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+/* -------------------- Lanzamiento --------------------*/
+
+.lanzamiento{
+    height: 100vh;
+    width:100%;
+    margin: 0 -5.5em 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lanzamiento img:first-child {
+    height: 100%;
+    width:100%;
+    z-index: 1;
+}
+
+.lanzamiento img:nth-child(2){
+    margin-top: -50%;
+    z-index: 2;
+    width: 70%;
+}
+
+.lanzamiento img:nth-child(3){
+    z-index: 3;
+    margin-top: -230px;
+}
+
+.descripcion{
+    margin: 50px auto;
+    width: 90vw;
+}
+
+.descripcion div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like{
+    background: rgba(18, 5, 37, 1);
+    height: 60px;
+    width: 60px;
+    border-radius:50%;
+}
+
+.like:hover{
+    background: rgba(58, 34, 92, 1);
+}
+
+.like svg :active {
+    fill:#F21D6B;
+}
+
+.reserva{
+    height: 55px;
+    width: 232px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background: rgba(18, 5, 37, 1);
+    font-size: 28px;
+    color: rgba(23, 232, 207, 1);
+    letter-spacing: 3px;
+}
+
+.reserva:hover{
+    background:rgba(23, 232, 207, 1);
+    color: rgba(18, 5, 37, 1);
+}
+
+.descripcion p{
+    font-size: 20px;
+    font-style: light;
+    margin: 20px 30% 20px 0;
+    font-weight: 300;
+    line-height: 33px;
+}
+
+.cardsLanzamiento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    margin: 75px auto;
+}
+
+.cardLanzamiento{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+    align-items: center;
+    width: 17vw;
+    height: 50vh;
+    background: rgba(18, 5, 37, 1);
+    border-radius: 15px;
+}
+
+.cardLanzamiento p{
+    margin: 30px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.cardLanzamiento > div{
+    margin-top: 30px;
+}
+
+.personajes{
+    width:100%;
+}
+
+.carouselPersonajes{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: auto;
+    width: 96%;
+    padding-bottom: 10px;
+}
+
+.personaje{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 280px;
+    background: #120525;
+    margin: 0 10px;
+    border-radius: 15px;
+}
+
+.personaje > img{
+    height: 250px;
+    margin: 15px;
+    object-fit: cover;
+}
+
+.personaje > h2, .personaje > p{
+    margin: 0 15px;
+}
+
+.historia{
+    margin: 50px 0 100px 15px;
+}
+
+.historia > p{
+    font-size: 16px;
+    margin: 20px 10% 20px 15px;
+    font-weight: 100;
+    line-height: 33px;
+}
+
+.personajes > h2, .historia > h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin:15px;
+}
+
+
+
+
+
+/*----------------------------------------- -----------------------------------------*/
+/*---------------------------------  Media -----------------------------------------*/
+/*----------------------------------------- -----------------------------------------*/
+/*----------------------------------------- -----------------------------------------*/
+
+@media (min-width: 600px) {
+
+    header {
+        height: 5em;
+    }
+
+    .logo {
+        height: 2.6rem;
+        width: 10.1rem;
+    }
+
+    .hamb-img {
+        height: 1.6rem;
+    }
+
+    nav#vertical-nav {
+        height: 100vh;
+    }
+
+    nav.breadcrumbs {
+        padding: .5em;
+        align-content: center;
+    }
+    
+    nav.breadcrumbs li {
+        font-size: .9em;
+        letter-spacing: .2em;
+        margin-left: 2em;
+    }
+
+    nav.breadcrumbs ul {
+        align-items: baseline;
+    }
+    
+    nav.breadcrumbs ul img {
+        width: 21px;
+        height: 21px;
+    }
+
+    .elipse:hover {
+        background-color: #261340;
+        transition: all .8s ease;
+    }
+
+    .upcoming-releases {
+        font-size: 1.2em;
+    }
+
+    /*----*/
+
+    footer {
+        padding-top: 4em;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+
+    footer div > img {
+        padding-top: 1.5em;
+    }
+
+    footer div.aside div {
+        padding-top: 1em;
+    }
+
+    footer div.nav {
+        flex-direction: row;
+    }
+
+    footer li, footer h1 {
+        text-align: left;
+    }
+
+    footer .aside h1 {
+        text-align: center;
+    }
+
+    footer div.leyend {
+        width: 100%;
+    }
+
+    footer div.suscribe {
+        padding: 0px;
+    }
+
+    footer p:last-child {
+        text-align: left;
+    }
+
+
+    /*----*/
+
+    div.container div.game-container {
+        min-height: 320px;
+    }
+
+    .buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {
+        height: 3rem;
+        /* min-width: 16em; */
+        margin: 1rem;
+    }
+
+    div.game-bkg-images img:not(#center-bkg-img) {
+        display: block;
+        width: 12em;
+        margin: 1em;
+    }
+
+    div.game-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2em 0em;
+    }
+
+    div.game-header h1 {
+        font-size: 1.8em;
+        font-weight: 600;
+    }
+
+    div.game-description h3 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+       
+    /*---------- carousel nav --------------*/
+
+    div.carousel div.carousel-nav,  section.personajes div.carousel-nav {
+        display: flex;
+        width: inherit;
+        height: 80%;
+        justify-content: space-between;
+        position: absolute;
+        align-content: center;
+    }
+
+    div#game-images-carousel div.carousel-nav {
+        height: 50%;
+    }
+
+    div.carousel div.carousel-nav > div,  section.personajes div.carousel-nav > div {
+        height: 100%;
+        background-color: #120525;
+        opacity: .7;
+        font-size: 4em;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+    }
+
+    div.carousel-nav div.back-btn {
+        visibility: hidden;
+    }
+
+    div.carousel-nav div.back-btn.visible {
+        visibility: visible;
+    }
+
+    div.carousel-nav div.forward-btn.hidden {
+        visibility: hidden;
+    }
+
+    div.carousel div.content {
+        position: relative;
+    }
+
+    /*--- Personajes carousel nav ----*/
+
+    section.personajes div.carousel-nav > div, div#game-images-carousel div.carousel-nav > div {
+        height: 80%;
+    }
+
+    section.personajes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.personajes div.carousel-nav > div {
+        padding: .5em;
+    } 
+
+    section.personajes div.carousel-nav > div, div#game-images-carousel div.carousel-nav > div {
+        background-color: unset;
+    }
+
+    section.personajes div.carousel-nav > div p, div#game-images-carousel div.carousel-nav > div p {
+        text-align: center;
+        background-color:#533A76;
+        border-radius: 100%;
+        width: 1.5em;
+        height: 1.5em;
+        left: 0;
+    }
+
+    div#game-images-carousel div.carousel-nav > div p {
+        margin: 0 -1em;
+    }
+
+    section.personajes, section.historia {
+        margin: 50px auto;
+        width: 90vw;
+    }
+
+    section div.small.carousel img:not(.buy-card-overlay img, .keep-playing-card img) {
+        height: 10em;
+    }
+
+    section div.carousel div.card h5 {
+        font-size: 1em;
+    }
+
+    /*--------------- Game images carousel -------------*/
+    div#game-images-carousel {
+        /* width: 85vw; */
+    }
+
+    div#game-images-carousel img {
+        width: 550px;
+    }
+
+    div#game-images-carousel div.content div.card div {
+        /* background-color: #00b84c; */
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding: .2em;
+        margin:.2em;
+    }
+
+    /*--------------- Animated cards carousel -------------*/
+
+    div.front-card > div {
+        text-align: center;
+    }
+
+    div.front-card, div.back-card {
+        background-color: #120525;
+        width: 260px;
+        height: 300px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+        margin: 2em;
+        font-size: .8em;
+    }
+
+    div.feature-card {
+        /* display: inline-block; */
+        vertical-align: top;
+        width: 50%;
+        top: 0px;
+        left: 0px;
+        -webkit-perspective: 900px;
+                perspective: 900px;
+    }
+
+    div.feature-card div.front-card {
+        top: 0px;
+        left: 0px;
+
+        -webkit-transform: rotateX(0) rotateY(0);
+                transform: rotateX(0) rotateY(0);
+
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+
+        -webkit-transition: all 1.5s ease-in-out;
+                transition: all 1.5s ease-in-out;
+    }
+
+    div.feature-card.flip .front-card {
+        -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+    }
+
+    div.feature-card.flip div.back-card {
+        -webkit-transform: rotateX(0) rotateY(0);
+                transform: rotateX(0) rotateY(0);
+    }
+
+    div.feature-card div.back-card {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+
+        -webkit-transition: all 1.5s ease-in-out;
+                transition: all 1.5s ease-in-out;
+    }
+
+    div.feature-card div.back-card img {
+        padding: 5px;
+        height: 100%;
+        width: 100%;
+    }
+
+    div.feature-card div.back-card img {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+    }
+
+    div.feature-card .pad {
+        padding: 0px 5px;
+    }
+
+    /*---------------------------------------------------*/
+    
+    /*-------- Cards Hover Functionality ---------*/
+    .buy-card-overlay, .keep-playing-card {
+        background-color: rgba(38, 19, 64, 0.8);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        font-size: 16px;
+    }
+    
+    .buy-card-overlay {
+        height: 50%;
+        width: 100%;
+        background-color: rgba(38, 19, 64, 0.8);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        top: 20%;
+    }
+    
+    .keep-playing-card {
+        height: 15em;
+        width: 19em;
+    }
+
+    section div.small.carousel img:not(.buy-card-overlay img, .keep-playing-card img) {
+        height: 12rem;
+    }
+
+    .btns-container {
+        font-weight: 600;
+        letter-spacing: .1em;
+        font-size: 1.2em;
+    }
+
+    #price {
+        font-size: 1.7em;
+    }
+
+}
+
+@media only screen and (min-width:1024px) {
+
+    .upcoming-releases {
+        font-size: 1.5em;
+    }
+
+    nav.breadcrumbs {
+        margin-top: 5em;
+        padding: 1em;
+    }
+
+    section div.carousel div.content, div#game-images-carousel div.content {
+        display: flex;
+        overflow-y: auto;
+        padding: 0em 3em 0em 0em;
+    }
+
+    section div.carousel div.title {
+        font-size: 1.3em;
+        padding-left: 2.3em;
+    }
+
+    section div.carousel img:not(.buy-card-overlay img, .keep-playing-card img) {
+        width: 300px;
+        height: 450px;
+    }
+
+    section div.carousel div.card:hover, div#game-images-carousel div.card:hover {
+        background:#261340;
+        border-radius: 3px;
+        filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+    }
+
+    section div.small.carousel img:not(.buy-card-overlay img, .keep-playing-card img) {
+        height: 15rem;
+    }
+
+    section div.carousel div.card h5 {
+        font-size: 1.2em;
+    }
+
+
+    div.game-bkg-images img:not(#center-bkg-img) {
+        width: 12em;
+        margin: 1em;
+    }
+    
+    div.game-bkg-images img#center-bkg-img {
+        width: 20em;
+        display: flex;
+    }
+
+}
+
+
+
+
+
