@@ -35,11 +35,6 @@ header button {
     margin-right: 10px;
 }
 
-.hamb-img {
-    height: 1.2rem;
-}
-
-
 .logo {
     margin-left: 20px;
     height: 2rem;
@@ -54,7 +49,7 @@ header button {
     justify-content: center;
 }
 
-.elipse:active {
+.elipse:active, nav#vertical-nav div li:active {
     background-color: #261340;
     /* transition: color 2s; */
 }
@@ -62,15 +57,15 @@ header button {
 nav#vertical-nav {
     height: 100vh;
     width: 90vw;
-    max-width: 28em;
+    max-width: 22em;
     margin-top: 4.5em;
-    padding: 0px 20px;
+    padding: 6px 20px;
     position: fixed;
     right: 0;
 }
 
-nav#vertical-nav div {
-    padding: 0.7em;
+nav#vertical-nav div:not(div.row.center) {
+    padding: 0.4em;
 }
 
 nav#vertical-nav div.search {
@@ -107,7 +102,7 @@ nav#vertical-nav ul {
 
 nav#vertical-nav div h1, footer div h1 {
     color: #f21d6b;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 nav#vertical-nav div li, footer {
@@ -115,7 +110,6 @@ nav#vertical-nav div li, footer {
 }
 
 nav#vertical-nav div h1, footer div h1, nav#vertical-nav div li, footer {
-    line-height: 25px;
     letter-spacing: 0.19em;
 }
 
@@ -128,7 +122,67 @@ nav#vertical-nav div h1, footer div h1, nav#vertical-nav div li, footer {
     flex-direction: row;
 }
 
+/*----------------------------- Cuarta entrega - Menu Btn --------------------*/
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
 
+.menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #f21d6b;
+    border-radius: 15px;
+    transition: all 0.5s ease-out;
+}
+
+.menu-btn.close {
+    transform: rotate(180deg);
+}
+
+.menu-btn.close .btn-line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -4px);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden;
+}
+
+.menu.show {
+    visibility: visible;
+}
+
+
+.nav-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
 
 
 
@@ -1394,14 +1448,6 @@ div.feature-card p {
         width: 10.1rem;
     }
 
-    .hamb-img {
-        height: 1.6rem;
-    }
-
-    nav#vertical-nav {
-        height: 100vh;
-    }
-
     nav.breadcrumbs {
         padding: .5em;
         align-content: center;
@@ -1600,16 +1646,11 @@ div.feature-card p {
     }
 
     /*--------------- Game images carousel -------------*/
-    div#game-images-carousel {
-        /* width: 85vw; */
-    }
-
     div#game-images-carousel img {
         width: 550px;
     }
 
     div#game-images-carousel div.content div.card div {
-        /* background-color: #00b84c; */
         display: flex;
         align-content: center;
         justify-content: center;
@@ -1637,7 +1678,6 @@ div.feature-card p {
     }
 
     div.feature-card {
-        /* display: inline-block; */
         vertical-align: top;
         width: 50%;
         top: 0px;
@@ -1754,6 +1794,10 @@ div.feature-card p {
 }
 
 @media only screen and (min-width:1024px) {
+
+    nav#vertical-nav div {
+        padding: 0.7em;
+    }
 
     .upcoming-releases {
         font-size: 1.5em;

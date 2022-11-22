@@ -3,12 +3,20 @@
 
 //---------------- Vertical nav -----------------------------
 
-let menuBtn = document.querySelector("#menu-btn");
-let vertNav = document.querySelector("#vertical-nav");
+const menuBtn = document.querySelector("#menu-btn");
+const vertNav = document.querySelector("#vertical-nav");
+let menuIsShown = false;
 menuBtn.addEventListener("click", () => {
-    vertNav.classList.toggle("display-none");
+    if(!menuIsShown) {
+        menuBtn.classList.add("close");
+        vertNav.classList.remove("display-none");
+        menuIsShown = true;
+    } else {
+        menuBtn.classList.remove("close");
+        vertNav.classList.add("display-none");
+        menuIsShown = false;
+    }
 });
-
 
 
 //--------------- Main carousel -----------------------------
