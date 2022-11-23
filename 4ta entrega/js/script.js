@@ -5,16 +5,44 @@
 
 const menuBtn = document.querySelector("#menu-btn");
 const vertNav = document.querySelector("#vertical-nav");
+const navItems = document.querySelectorAll(".nav-div-item");
+const profileListItems = document.querySelectorAll(".profile-list li");
+const categoriesListItems = document.querySelectorAll(".categories-list li");
+
 let menuIsShown = false;
 menuBtn.addEventListener("click", () => {
     if(!menuIsShown) {
         menuBtn.classList.add("close");
-        vertNav.classList.remove("display-none");
+        vertNav.classList.add("open");
+        navItems.forEach((item) => {
+            item.classList.remove("close");
+            item.classList.add("open");
+        });
+        profileListItems.forEach((item) => {
+            item.classList.remove("close");
+            item.classList.add("open");
+        });
+        categoriesListItems.forEach((item) => {
+            item.classList.remove("close");
+            item.classList.add("open");
+        });
         menuIsShown = true;
     } else {
         menuBtn.classList.remove("close");
-        vertNav.classList.add("display-none");
+        navItems.forEach((item) => {
+            item.classList.remove("open");
+            item.classList.add("close");
+        });
+        profileListItems.forEach((item) => {
+            item.classList.remove("open");
+            item.classList.add("close");
+        });
+        categoriesListItems.forEach((item) => {
+            item.classList.remove("open");
+            item.classList.add("close");
+        });
         menuIsShown = false;
+        vertNav.classList.remove("open");
     }
 });
 
