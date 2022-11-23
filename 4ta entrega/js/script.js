@@ -1,5 +1,19 @@
 "use strict";
 
+//---------------- Header shrink animation ------------------
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.querySelector("header").style.height = "70px";
+    document.querySelector(".search").style.margintop = "70px";
+    document.querySelector(".logo").style.height = "30px";
+  } else {
+    document.querySelector("header").style.height = "100px";
+    document.querySelector(".search").style.margintop = "95px";
+    document.querySelector(".logo").style.height = "40px";
+  }
+}
 
 //---------------- Vertical nav -----------------------------
 
