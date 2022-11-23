@@ -213,7 +213,7 @@ nav#vertical-nav.open {
     nav#vertical-nav {
         transform: translateX(0);
         clip-path: circle(0px at top right);
-        transition: clip-path ease-in-out 1000ms 250ms;
+        transition: clip-path ease-in-out 700ms 250ms;
     }
 
     nav#vertical-nav.open {
@@ -1541,15 +1541,6 @@ div.feature-card p {
 
 @media (min-width: 600px) {
 
-    /* header {
-        height: 5em;
-    } */
-
-    /* .logo {
-        height: 2.6rem;
-        width: 10.1rem;
-    } */
-
     nav.breadcrumbs {
         padding: .5em;
         align-content: center;
@@ -1902,16 +1893,12 @@ div.feature-card p {
 
 @media only screen and (min-width:1024px) {
 
-    nav#vertical-nav div {
-        padding: 0.7em;
-    }
-
     .upcoming-releases {
         font-size: 1.5em;
     }
 
     nav.breadcrumbs {
-        margin-top: 5em;
+        margin-top: 92px;
         padding: 1em;
     }
 
