@@ -1407,7 +1407,7 @@ div.feature-card p {
 
 .descripcion div{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -1429,7 +1429,7 @@ div.feature-card p {
 .reserva{
     height: 55px;
     width: 232px;
-    margin-left: 5px;
+    margin: 0px 9px;
     border-radius: 5px;
     background: rgba(18, 5, 37, 1);
     font-size: 28px;
@@ -1443,10 +1443,6 @@ div.feature-card p {
 }
 
 .descripcion p{
-    font-size: 20px;
-    font-style: light;
-    margin: 20px 30% 20px 0;
-    font-weight: 300;
     line-height: 33px;
 }
 
@@ -1462,7 +1458,6 @@ div.feature-card p {
 .cardLanzamiento{
     display: flex;
     flex-direction: column;
-    /*justify-content: space-around;*/
     align-items: center;
     width: 17vw;
     height: 50vh;
@@ -1530,6 +1525,136 @@ div.feature-card p {
     margin:15px;
 }
 
+/*------------------------------- Sprite sheets -------------------------------------*/
+
+#sprite1 {
+    width: 69px;
+    height: 115px;
+    margin-left: -170px;
+    background: url(../images/spritesheet/sprite1.png) repeat-x;
+    animation: jump 3s steps(7) infinite;
+}
+
+#sprite2 {
+    width: 65px;
+    height: 100px;
+    margin-right: -268px; 
+    background: url("../images/spritesheet/sprite2.png") repeat-x;
+    animation: down 3s steps(7) infinite;
+}
+
+#sprite3 {
+    width: 67px;
+    height: 65px;
+    margin: auto;  
+    background: url("../images/spritesheet/sprite3.png") repeat-x;
+    animation: hit 3s steps(7) infinite;
+}
+
+#sprite4 {
+    width: 55px;
+    height: 196px;
+    margin: auto;  
+    background: url("../images/spritesheet/sprite4.png") repeat-x;
+    animation: catch 9s steps(8) infinite;
+}
+
+#sprite5 {
+    width: 1190px;
+    height: 2480px;
+    margin: auto;  
+    background: url("../images/spritesheet/sprite5.jpg") repeat-x;
+    animation: turn 9s steps(3) infinite;
+}
+
+@keyframes turn {
+    0% { background-position: 0;}
+    50% { background-position: -1126px;}
+    100% { background-position: 0px;}
+}
+
+  
+@keyframes jump {
+    0% { background-position: 0;}
+    100% { background-position: -487px;}
+}
+
+@keyframes forward {
+    0% { margin-left: 0; }
+    50% { margin-left: 1420px; }  /*-- va y viene ---*/
+    100% { margin-left: 0px;}
+  }
+
+@keyframes down {
+    0% { background-position: 0;}
+    100% { background-position: -455px;}
+}
+
+@keyframes hit {
+    0% { background-position: 0;}
+    100% { background-position: -474px;}
+}
+
+@keyframes catch {
+    0% { background-position: 0;}
+    100% { background-position: -438px;}
+}
+
+/*----------------------- containers ----------------------------*/
+
+div#game-description, div#sprite-btn-animation {
+    width: 50%;
+    margin: 1em;
+}
+
+div#game-description {
+    flex-direction: column;
+}
+
+div#game-description h1 {
+    padding: 20px;
+}
+
+div#sprite-btn-animation div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+}
+
+div#sprite-btn-animation div:nth-child(2) > div {
+    width: 232px;
+}
+
+div#reserva-btn-div, div#sprite1-container {
+    animation: swing 3s infinite;
+}
+
+div#like-btn-container {
+    margin-top: -250px;
+    z-index: 1;
+    animation-delay: 3s;
+    animation: swing 3s infinite;
+}
+
+div#like-btn-container button.like {
+    animation: fall 3s infinite .7s;
+   
+}
+
+/*------------------------ Btns animation -----------------------*/
+@keyframes swing {
+    0% { transform: rotateZ(0deg) translate(0,0);}
+    20% { transform: rotateZ(20deg) translate(15px,-5px);}
+    40% { transform: rotateZ(-10deg) translate(-15px,2px);}
+    60% { transform: rotateZ(11deg) translate(10px,-1px);}
+    80% { transform: rotateZ(0deg) translate(0,0);}
+}
+
+@keyframes fall {
+    0% { transform: translateY(0px);}
+    50% {  transform: translateY(50px);}
+    100% { transform: translateY(0px);}
+}
 
 
 
