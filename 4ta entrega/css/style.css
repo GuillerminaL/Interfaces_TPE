@@ -1427,6 +1427,7 @@ div.feature-card p {
 }
 
 .reserva{
+    font-weight: 600;
     height: 55px;
     width: 232px;
     margin: 0px 9px;
@@ -1443,6 +1444,7 @@ div.feature-card p {
 }
 
 .descripcion p{
+    letter-spacing: 1px;
     line-height: 33px;
 }
 
@@ -1485,7 +1487,7 @@ div.feature-card p {
     overflow-x: scroll;
     overflow-y: auto;
     width: 96%;
-    padding-bottom: 10px;
+    padding: 30px 0px;
 }
 
 .personaje{
@@ -1520,9 +1522,9 @@ div.feature-card p {
 }
 
 .personajes > h2, .historia > h2{
-    font-size: 20px;
-    font-weight: 600;
-    margin:15px;
+    letter-spacing: 5px;
+    margin: 32px;
+    margin-bottom: 0px;
 }
 
 /*------------------------------- Sprite sheets -------------------------------------*/
@@ -1572,6 +1574,8 @@ div#game-description {
 
 div#game-description h1 {
     padding: 20px;
+    letter-spacing: 3px;
+    font-size: 2em;
 }
 
 div#sprite-btn-animation div:nth-child(2) {
@@ -1592,6 +1596,29 @@ div#like-btn-container {
     margin: 20px;
 }
 
+button.like {
+    animation: pinkPulse 3s infinite 3s;
+}
+
+button.reserva {
+    animation: pulse 3s infinite 2s;
+}
+
+button.like:hover {
+    animation: none;
+    cursor: pointer;
+}
+
+button.reserva:hover {
+    animation: none;
+    cursor: pointer;
+    background-color: #17E8CF; 
+    color:  #120525;
+}
+
+button.reserva:active, button.like:active {
+    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+}
 
 /*------------------------ Btns animation -----------------------*/
 @keyframes swing {
@@ -1606,6 +1633,18 @@ div#like-btn-container {
     0% { transform: translateY(0px);}
     50% {  transform: translateY(50px);}
     100% { transform: translateY(0px);}
+}
+
+@keyframes pulse {
+    0% { background-color: #120525; color: #17E8CF;}
+    93% { background-color: #120525; color: #17E8CF;}
+    100% { background-color: #17E8CF; color:  #120525;}
+}
+
+@keyframes pinkPulse {
+    0% { background-color: #120525; }
+    93% { background-color: #120525; }
+    100% { background-color:#F21D6B}
 }
 
 /*------------------------------- Cards horizontal scrolling -----------------------*/
@@ -1629,14 +1668,15 @@ div#like-btn-container {
 
 .cardLanzamiento.appearing {
     visibility: visible;
-    animation: fadeIn var(--bezier) 1s forwards, swing 3s .5s;
+    animation: fadeIn var(--bezier) 1s forwards, swing 3s infinite .5s;
 }
 
 .cardLanzamiento.disappearing {
     animation: fadeOut var(--bezier) 1s forwards;
 }
 
-.cardLanzamiento:hover {
+.cardLanzamiento.appearing:hover {
+    animation-play-state: paused;
     box-sizing: border-box;
     border-radius: 0%;
     transition: .3s ease-in-out;
@@ -1645,6 +1685,43 @@ div#like-btn-container {
 
 
 /*------------------------Caracters carousel titles animation -----------------------------*/
+
+div.personaje h2 {
+    text-align: start;
+    letter-spacing: 2px;
+    margin-top: -100px;
+    margin-left: 14px;
+}
+
+div.personaje p {
+    font-size: 14px;
+    margin-block-start: auto;
+    text-align: justify;
+}
+
+div.personaje h2, div.personaje p {
+    opacity: 0;
+}
+
+div.personaje h2.animated, div.personaje p.animated  {
+    opacity: 1;
+    transition: ease 2s;
+}
+
+div.personaje h2.animated {
+    transform: scale3d(1, 1, 1) translateY(95px);
+    transform-style: preserve-3d;
+}
+
+div.personaje p.animated {
+    transform: scale3d(1, 1, 1) translateY(-65px);
+}
+
+div.personaje:hover {
+    transition: .6s ease-in-out;
+    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+}
+
 
 /*----------------------------------------- -----------------------------------------*/
 /*---------------------------------  Media -----------------------------------------*/
@@ -1778,6 +1855,10 @@ div#like-btn-container {
         justify-content: space-between;
         position: absolute;
         align-content: center;
+    }
+
+    section.personajes div.carousel-nav {
+        height: 110%;
     }
 
     div#game-images-carousel div.carousel-nav {
