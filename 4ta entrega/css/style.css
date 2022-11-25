@@ -1627,15 +1627,14 @@ div#like-btn-container {
     visibility: hidden;
 }
 
-.cardLanzamiento.scrolling {
+.cardLanzamiento.appearing{
     visibility: visible;
-    animation: fadeIn var(--bezier) 1s, swing 3s .5s;
+    animation: fadeIn var(--bezier) 1s forwards, swing 3s .5s;
 }
 
-/* .cardsLanzamiento.shake {
-    animation: swing 1s reverse 280ms;
-    
-} */
+.cardLanzamiento.disappearing {
+    animation: fadeOut var(--bezier) 1s forwards;
+}
 
 
 /*----------------------------------------- -----------------------------------------*/
