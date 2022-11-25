@@ -1608,7 +1608,34 @@ div#like-btn-container {
     100% { transform: translateY(0px);}
 }
 
+/*------------------------------- Cards horizontal scrolling -----------------------*/
 
+.cardsLanzamiento {
+   width: 100vw;
+   height: 370px;
+}
+
+.cardsLanzamiento div.cardLanzamiento:first-child {
+    margin-left: 60px;
+}
+
+.cardsLanzamiento div:last-child {
+    margin-right: 60px;
+}
+
+.cardLanzamiento {
+    visibility: hidden;
+}
+
+.cardLanzamiento.scrolling {
+    visibility: visible;
+    animation: fadeIn var(--bezier) 1s, swing 3s .5s;
+}
+
+/* .cardsLanzamiento.shake {
+    animation: swing 1s reverse 280ms;
+    
+} */
 
 
 /*----------------------------------------- -----------------------------------------*/
