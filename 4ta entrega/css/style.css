@@ -1627,7 +1627,7 @@ div#like-btn-container {
     visibility: hidden;
 }
 
-.cardLanzamiento.appearing{
+.cardLanzamiento.appearing {
     visibility: visible;
     animation: fadeIn var(--bezier) 1s forwards, swing 3s .5s;
 }
@@ -1636,6 +1636,15 @@ div#like-btn-container {
     animation: fadeOut var(--bezier) 1s forwards;
 }
 
+.cardLanzamiento:hover {
+    box-sizing: border-box;
+    border-radius: 0%;
+    transition: .3s ease-in-out;
+    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+}
+
+
+/*------------------------Caracters carousel titles animation -----------------------------*/
 
 /*----------------------------------------- -----------------------------------------*/
 /*---------------------------------  Media -----------------------------------------*/
@@ -1803,7 +1812,7 @@ div#like-btn-container {
 
     /*--- Personajes carousel nav ----*/
 
-    section.personajes div.carousel-nav > div, div#game-images-carousel div.carousel-nav > div {
+    div#game-images-carousel div.carousel-nav > div {
         height: 80%;
     }
 
@@ -1811,10 +1820,6 @@ div#like-btn-container {
         display: flex;
         flex-direction: column;
     }
-
-    section.personajes div.carousel-nav > div {
-        padding: .5em;
-    } 
 
     section.personajes div.carousel-nav > div, div#game-images-carousel div.carousel-nav > div {
         background-color: unset;

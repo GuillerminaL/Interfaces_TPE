@@ -10,7 +10,7 @@
 
 let cards = [];
 function animateScroll (entries) {
-    if(entries[0].isIntersecting) {      
+    if(entries[0].isIntersecting) {    
         cards = animatedContainer.children;
         let i = 0;
         let card = cards[i];
@@ -39,7 +39,12 @@ let options = {
     threshold: 0.5 //cuándo se ejecuta el código, de 0.0 a 1.0 (ej. mitad del obj 0.5)
 }
 
-const observer = new IntersectionObserver(animateScroll, options);
+const animatedContainerObserver = new IntersectionObserver(animateScroll, options);
 const animatedContainer = document.querySelector(".cardsLanzamiento");
 
-observer.observe(animatedContainer);
+animatedContainerObserver.observe(animatedContainer);
+
+
+//------------------ Caracter carousel titles animation ---------------------
+
+
