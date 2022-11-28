@@ -63,7 +63,6 @@ header button {
 
 .elipse:active, nav#vertical-nav div li:active, div.search:hover {
     background-color: #261340;
-    /* transition: color 2s; */
 }
 
 nav#vertical-nav {
@@ -298,7 +297,6 @@ footer {
     min-height: 300px;
     width: 100vw;
     margin-bottom: 0px;
-    /* bottom: 0; */
     position: absolute;
 }
 
@@ -461,7 +459,7 @@ body section {
 body section > div {
     width: 100%;
     position: relative;
-    max-height: 41.5em;
+    /* max-height: 41.5em; */
     margin: auto;
     overflow: hidden;
 }
@@ -1511,17 +1509,11 @@ div.feature-card p {
 }
 
 .historia{
-    margin: 50px 0 100px 15px;
+    margin-top: 8em;
+    overflow: unset;
 }
 
-.historia > p{
-    font-size: 16px;
-    margin: 20px 10% 20px 15px;
-    font-weight: 100;
-    line-height: 33px;
-}
-
-.personajes > h2, .historia > h2{
+.personajes > h2, .historia > h2 {
     letter-spacing: 5px;
     margin: 32px;
     margin-bottom: 0px;
@@ -1562,6 +1554,10 @@ div.feature-card p {
 }
 
 /*----------------------- containers ----------------------------*/
+
+section.descripcion {
+    width: 75vw;
+}
 
 div#game-description, div#sprite-btn-animation {
     width: 50%;
@@ -1668,21 +1664,12 @@ button.reserva:active, button.like:active {
 
 .cardLanzamiento.appearing {
     visibility: visible;
-    animation: fadeIn var(--bezier) 1s forwards, swing 3s infinite .5s;
+    animation: fadeIn var(--bezier) 1s forwards, swing 3s .5s;
 }
 
 .cardLanzamiento.disappearing {
     animation: fadeOut var(--bezier) 1s forwards;
 }
-
-.cardLanzamiento.appearing:hover {
-    animation-play-state: paused;
-    box-sizing: border-box;
-    border-radius: 0%;
-    transition: .3s ease-in-out;
-    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
-}
-
 
 /*------------------------Caracters carousel titles animation -----------------------------*/
 
@@ -1717,10 +1704,71 @@ div.personaje p.animated {
     transform: scale3d(1, 1, 1) translateY(-65px);
 }
 
-div.personaje:hover {
-    transition: .6s ease-in-out;
-    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
+/*-- ------------------ Story columns scroll animation --------------------- --*/
+
+div#story-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: unset;
+    width: 80%;
 }
+
+div#story-left-wrapper{
+    position: relative;
+}
+
+div#story-img {
+    top: 20%;
+    margin-bottom: 20%;
+    position: sticky;
+}
+
+div#story-img img {
+    border-radius: 10px;
+    width: 500px;
+}
+
+div#story-right-wrapper {
+    width: 40%;
+    text-align: left;
+    margin-bottom: 0%;
+}
+
+div#story-right-wrapper h2, div#story-right-wrapper p {
+    height: 300px;
+}
+
+div#story-right-wrapper h2 {
+    letter-spacing: 5px;
+    font-size: 1.6em;
+    margin-top: 10%;
+    text-align: center;
+}
+
+div#story-right-wrapper p, div#story-left-wrapper img {
+    opacity: 0;
+}
+
+div#story-right-wrapper p.visible {
+    opacity: 1;
+    transition: all 1.5s ease-in-out;
+}
+
+div#story-right-wrapper p.invisible {
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+}
+
+div#story-left-wrapper img.visible {
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
+
+div#story-left-wrapper img.invisible {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
 
 
 /*----------------------------------------- -----------------------------------------*/
@@ -1919,7 +1967,7 @@ div.personaje:hover {
         margin: 0 -1em;
     }
 
-    section.personajes, section.historia {
+    section.personajes {
         margin: 50px auto;
         width: 90vw;
     }
