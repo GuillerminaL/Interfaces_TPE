@@ -76,6 +76,7 @@ let imgRoute = '../images/lanzamiento/story/img';
 let imgType = '.jpg';
 const img = document.querySelector("div#story-img img");
 
+const storySection = document.querySelector("section.historia");
 const storySectionTitle = document.querySelector("section.historia h2");
 const storyObserver = new IntersectionObserver(showStory, {root: null, rootMargin: '0px', threshold: 0.5 });
 const paragraphs = document.querySelectorAll("#story-right-wrapper p");
@@ -108,3 +109,46 @@ function showStory(entries) {
 
 storyObserver.observe(storySectionTitle);
 
+//-------------------------- Parallax ----------------------------------
+const body = document.querySelector("body");
+const releaseTitle = document.querySelector(".title");
+const releaseSection = document.querySelector("section#release");
+
+const releaseObserver = new IntersectionObserver(function(entries) {
+    if(!entries[0].isIntersecting) {
+        releaseTitle.classList.remove("visible");
+        body.classList.remove('stop-scrolling');
+    } 
+}, {threshold: [1]});
+
+
+/**
+ * Al cargarse la página, deshabilita el scroll y escucha un click o mouse move 
+ * para mostrar el título del release, luego libera el scroll
+ */
+
+function showTitle () {
+
+    body.classList.add('stop-scrolling');
+
+    releaseSection.addEventListener("click", () => {
+        if(!releaseTitle.classList.contains("visible")) {
+            releaseTitle.classList.add("visible");
+            body.classList.remove('stop-scrolling');
+        } else {
+            releaseTitle.classList.remove("visible");
+        }
+    });
+
+    releaseSection.addEventListener("mousemove", () => {
+        if(!releaseTitle.classList.contains("visible")) {
+            releaseTitle.classList.add("visible");
+            body.classList.remove('stop-scrolling');
+        }
+    });
+    
+    releaseObserver.observe(releaseSection);
+
+}
+
+window.onload = showTitle();

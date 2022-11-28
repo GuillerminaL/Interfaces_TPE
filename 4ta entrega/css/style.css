@@ -1372,7 +1372,7 @@ div.feature-card p {
 
 /* -------------------- Lanzamiento --------------------*/
 
-.lanzamiento{
+/* .lanzamiento{
     height: 100vh;
     width:100%;
     margin: 0 -5.5em 0 0;
@@ -1396,7 +1396,7 @@ div.feature-card p {
 .lanzamiento img:nth-child(3){
     z-index: 3;
     margin-top: -230px;
-}
+} */
 
 .descripcion{
     margin: 50px auto;
@@ -1791,6 +1791,7 @@ div#content-all {
     perspective: 1000px;
     position: relative;
     margin-top: 200px;
+    filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
 }
 
 div#content-carousel {
@@ -1806,7 +1807,6 @@ div#content-carousel:hover {
 }
 
 div#content-carousel > div {
-    box-sizing: border-box;
     position: absolute;
     width: 100%;
     height: 120px;
@@ -1877,6 +1877,119 @@ div#content-carousel div:nth-child(9) {
     from { transform: rotateY(0deg);}
     to { transform: rotateY(360deg);}
 }
+
+
+/*-------------------------------- Parallax ----------------------------------------*/
+.stop-scrolling {
+    height: 100;
+    overflow: hidden;
+}
+
+section#release {
+    height: 100vh;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
+.layer0 {
+    background-image: url("../images/lanzamiento/Background\ God\ of\ War.png");
+    z-index: -11;
+}
+
+.layer1 {
+    background-image: url("../images/lanzamiento/parallax/03_Particles.png");
+    animation: scroll 60s infinite linear;
+    z-index: -10;
+}
+
+.layer2 {
+    background-image: url("../images/lanzamiento/parallax/09_Forest.png");
+    opacity: 0.5;
+    z-index: -9;
+} 
+
+.layer3 {
+    background-image: url("../images/lanzamiento/parallax/07_Forest.png");
+    z-index: -8;
+}
+
+.layer4 {
+    background-image: url("../images/lanzamiento/parallax/03_Particles.png");
+    animation: scroll 60s infinite linear;
+    z-index: -7;
+}
+
+.layer5 {
+    background-image: url("../images/lanzamiento/parallax/06_Forest.png");
+    z-index: -6;
+}
+
+.layer6 {
+    background-image: url("../images/lanzamiento/parallax/05_Particles.png");
+    animation: scroll 55s infinite linear;
+    z-index: -5;
+}
+
+.layer7 {
+    background-image: url("../images/lanzamiento/parallax/01_Mist.png");
+    animation: scroll 40s infinite linear;
+    z-index: -4;
+}
+
+.layer8 {
+    background-image: url("../images/lanzamiento/parallax/03_Particles.png");
+    animation: scroll 45s infinite linear;
+    z-index: -3;
+}
+
+.layer9 {
+    background-image: url("../images/lanzamiento/parallax/02_Bushes.png");
+    z-index: -2;
+}
+
+.layer10 {
+    background-image: url("../images/lanzamiento/parallax/01_Mist.png");
+    animation: scroll 30s infinite linear;
+    z-index: -1;
+}
+
+.title {
+    margin-left: 42.5%;
+    opacity: 0;
+    width: 189px;
+    z-index: -8;
+    transition: 3s;
+}
+
+.title.visible {
+    opacity: 1;
+    transform: scale(4);
+    z-index: 1;
+    transition: 3s;
+}
+
+.title img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    from { background-position-x: 0px;}
+    to {background-position-x: -1920px;}
+}
+
+
+
+
 /*----------------------------------------- -----------------------------------------*/
 /*---------------------------------  Media -----------------------------------------*/
 /*----------------------------------------- -----------------------------------------*/
