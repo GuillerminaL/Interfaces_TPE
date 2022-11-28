@@ -60,19 +60,11 @@ const caracterAbilities = document.querySelectorAll("div.personaje p");
 let textsAreAnimated = false;
 function animateTitles (entries) {
     if(entries[0].isIntersecting) { 
-        caracterNames.forEach(name => {
-            name.classList.add("animated");
-        });
-        caracterAbilities.forEach(ability => {
-            ability.classList.add("animated");
-        });
+        caracterNames.forEach(name => { name.classList.add("animated"); });
+        caracterAbilities.forEach(ability => { ability.classList.add("animated"); });
     } else {
-        caracterNames.forEach(name => {
-            name.classList.remove("animated");
-        });
-        caracterAbilities.forEach(ability => {
-            ability.classList.remove("animated");
-        });
+        caracterNames.forEach(name => { name.classList.remove("animated"); });
+        caracterAbilities.forEach(ability => { ability.classList.remove("animated"); });
     }
 }
 
@@ -86,8 +78,12 @@ const img = document.querySelector("div#story-img img");
 
 const storySection = document.querySelector("section.historia h2");
 const storyObserver = new IntersectionObserver(showStory, {root: null, rootMargin: '0px', threshold: 1});
-
 const paragraphs = document.querySelectorAll("#story-right-wrapper p");
+
+/**
+ * Agrega un observador a cada párrafo para que, al entrar en el viewport, 
+ * se haga visible junto con la imagen correspondiente 
+ */
 paragraphs.forEach((p) => {
     const paragraphObserver = new IntersectionObserver(function(entries){
         if(entries[0].isIntersecting) {  
@@ -103,6 +99,10 @@ paragraphs.forEach((p) => {
     paragraphObserver.observe(p);
 });
 
+/**
+ * Agrega un observador al título de la sección para que, al entrar en el viewport, 
+ * se haga visible junto con la imagen correspondiente 
+ */
 function showStory(entries) {
     if(entries[0].isIntersecting) { 
         img.src = imgRoute + "0" + imgType;
@@ -112,5 +112,6 @@ function showStory(entries) {
         storySection.classList.add("visible");
     }
 }
+
 storyObserver.observe(storySection);
 
