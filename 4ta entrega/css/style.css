@@ -1724,6 +1724,7 @@ div#story-left-wrapper{
 }
 
 div#story-img {
+    min-width: 500px;
     top: 35%;
     margin-bottom: 20%;
     position: sticky;
