@@ -115,7 +115,7 @@ const releaseSection = document.querySelector("section#release");
 
 const releaseObserver = new IntersectionObserver(function(entries) {
     if(!entries[0].isIntersecting) {
-        releaseTitle.classList.remove("visible");
+        // releaseTitle.classList.remove("visible");
         body.classList.remove('stop-scrolling');
     } 
 }, {threshold: [1]});
@@ -128,7 +128,7 @@ const releaseObserver = new IntersectionObserver(function(entries) {
 
 function showTitle () {
 
-    body.classList.add('stop-scrolling');
+    // body.classList.add('stop-scrolling');
 
     releaseSection.addEventListener("click", () => {
         if(!releaseTitle.classList.contains("visible")) {
