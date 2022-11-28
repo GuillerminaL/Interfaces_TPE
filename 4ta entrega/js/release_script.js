@@ -77,8 +77,7 @@ let imgType = '.jpg';
 const img = document.querySelector("div#story-img img");
 
 const storySection = document.querySelector("section.historia");
-const storySectionTitle = document.querySelector("section.historia h2");
-const storyObserver = new IntersectionObserver(showStory, {root: null, rootMargin: '0px', threshold: 0.5 });
+const storyObserver = new IntersectionObserver(showStory, {root: null, rootMargin: '0px', threshold: 0 });
 const paragraphs = document.querySelectorAll("#story-right-wrapper p");
 
 /**
@@ -107,7 +106,7 @@ function showStory(entries) {
     }
 }
 
-storyObserver.observe(storySectionTitle);
+storyObserver.observe(storySection);
 
 //-------------------------- Parallax ----------------------------------
 const body = document.querySelector("body");
