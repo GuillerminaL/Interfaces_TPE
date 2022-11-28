@@ -31,7 +31,7 @@ function animateScroll (entries) {
                 clearInterval(interval);
                 cardsAreVisible = true;  
             } 
-        }, 500);
+        }, 300);
     } else {
         if(cardsAreVisible) {
             let i = cards.length-1;
@@ -76,42 +76,35 @@ let imgRoute = '../images/lanzamiento/story/img';
 let imgType = '.jpg';
 const img = document.querySelector("div#story-img img");
 
-const storySection = document.querySelector("section.historia h2");
-const storyObserver = new IntersectionObserver(showStory, {root: null, rootMargin: '0px', threshold: 1});
+const storySectionTitle = document.querySelector("section.historia h2");
+const storyObserver = new IntersectionObserver(showStory, {root: null, rootMargin: '0px', threshold: 0.5 });
 const paragraphs = document.querySelectorAll("#story-right-wrapper p");
 
 /**
- * Agrega un observador a cada párrafo para que, al entrar en el viewport, 
+ * Al aparecer el título de la sección en el viewport, 
+ * agrega un observador a cada párrafo para que a medida que entren al viewport
  * se haga visible junto con la imagen correspondiente 
  */
-paragraphs.forEach((p) => {
-    const paragraphObserver = new IntersectionObserver(function(entries){
-        if(entries[0].isIntersecting) {  
-            img.src = imgRoute + p.getAttribute("data") + imgType;
-            if(img.classList.contains("invisible")) img.classList.remove("invisible");
-            if(p.classList.contains("invisible")) p.classList.remove("invisible");
-            img.classList.add("visible");
-            p.classList.add("visible");
-        } else {
-            if(p.classList.contains("visible")) p.classList.add("invisible");
-        }
-    }, {threshold: [1]});
-    paragraphObserver.observe(p);
-});
 
-/**
- * Agrega un observador al título de la sección para que, al entrar en el viewport, 
- * se haga visible junto con la imagen correspondiente 
- */
 function showStory(entries) {
     if(entries[0].isIntersecting) { 
-        img.src = imgRoute + "0" + imgType;
-        if(img.classList.contains("invisible")) img.classList.remove("invisible");
-        if(storySection.classList.contains("invisible")) storySection.classList.remove("invisible");
-        img.classList.add("visible");
-        storySection.classList.add("visible");
+            paragraphs.forEach((p) => {
+                const paragraphObserver = new IntersectionObserver(function(entries){
+                    if(entries[0].isIntersecting) {  
+                        img.src = imgRoute + p.getAttribute("data") + imgType;
+                        if(img.classList.contains("invisible")) img.classList.remove("invisible");
+                        if(p.classList.contains("invisible")) p.classList.remove("invisible");
+                        img.classList.add("visible");
+                        p.classList.add("visible");
+                    } else {
+                        if(p.classList.contains("visible")) p.classList.add("invisible");
+                        if(img.classList.contains("visible")) img.classList.add("invisible");
+                    }
+                }, {threshold: [0.5]});
+                paragraphObserver.observe(p);
+            });
     }
 }
 
-storyObserver.observe(storySection);
+storyObserver.observe(storySectionTitle);
 
